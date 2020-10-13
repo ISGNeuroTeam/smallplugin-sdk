@@ -1,9 +1,11 @@
 package ot.dispatcher.plugins.small.sdk
 
+import com.typesafe.config.Config
 import org.apache.spark.sql.DataFrame
 
 trait ScoreModel {
 
-  def score(searchId: Int, labelCol: String, predictionCol: List[String], metricName: String, featuresNumber: Double): DataFrame => DataFrame
+  def score(modelName: String, modelConfig: Option[Config], searchId: Int, labelCol: String,
+            predictionCol: List[String], metricName: String, featuresNumber: Double): DataFrame => DataFrame
 
 }
