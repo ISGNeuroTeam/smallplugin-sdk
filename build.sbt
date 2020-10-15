@@ -14,10 +14,10 @@ lazy val dependencies = new {
   private val sparkVersion = "2.4.3"
 
   val dispatcherSdk = "ot.dispatcher" % "dispatcher-sdk_2.11" % dispatcherSdkVersion % Provided
-  val spark = "org.apache.spark" %% "spark-mllib" % sparkVersion % Provided
+  val sparkMlLib = "org.apache.spark" %% "spark-mllib" % sparkVersion % Provided
 }
 
 libraryDependencies ++= Seq(
   dependencies.dispatcherSdk,
-  dependencies.spark
+  dependencies.sparkMlLib
 )
