@@ -95,7 +95,7 @@ object MyMultiModel extends ScoreModel with FitModel with ApplyModel {
 
 ## Deployment
 
-Then your extension is ready you can deploy as a part of the **SMaLL Plugin Core**.
+Then your extension is ready you can deploy it as a part of the **SMaLL Plugin Core**.
 See the "Extensions deployment" section of **SMaLL Plugin Core** README.md file.
 
 ## Built With
