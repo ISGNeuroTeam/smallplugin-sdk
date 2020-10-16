@@ -7,6 +7,7 @@ The tools for development a SMaLL plugin extensions.
 ### Prerequisites
 
 This package is require the SBT, and the JDK 8 installed.
+It also required the `dispatcher-sdk` module published locally.
 
 ## Creating extension
 
