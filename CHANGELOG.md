@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2020-10-16
+### Added
+- The testing tool for developers of the **SMaLL Plugin Core** extensions.
+### Changed
+- The `dispatcher-sdk` library dependency now is compiled into this module. 
+
 ## [0.1.0] - 2020-10-16
 ### Added
 - Ability to create a custom `fit` command extension via the `FitModel` trait.
