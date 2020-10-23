@@ -94,6 +94,36 @@ object MyMultiModel extends ScoreModel with FitModel with ApplyModel {
 }
 ```
 
+## Testing extensions
+
+This SDK module provides testing tools for developers of the **SMaLL Plugin Core** extensions.
+The testing tools based on the `ScalaTest` framework and provides the abstract suite in `FlatSpec` style.
+It also provides the `DataFrame`'s matchers `shouldBe` and `shouldNotBe`.
+
+### Example
+```scala
+class DummyApplySpec extends ModelSpec {
+
+  "The dummy model" should "be easy to test" in { utils =>
+    val run = DummyApply.apply(
+      ...
+      utils = utils
+    )
+
+    val input: DataFrame = ...
+
+    val expected: DataFrame = ...
+
+    val actual = run(input)
+
+    actual shouldBe input
+    actual shouldNotBe expected
+  }
+}
+```
+
+The full code example can be found in the `src/test` directory of this module. 
+
 ## Deployment
 
 Then your extension is ready you can deploy it as a part of the **SMaLL Plugin Core**.

@@ -73,8 +73,8 @@ clean:
 
 test:
 	# required section
-	echo "Tests are not applicable to this type of application"
-	true
+	echo "Testing..."
+	sbt test
 
 publish:
 	# Addition section
