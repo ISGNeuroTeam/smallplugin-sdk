@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - The testing tool's DataFrame matchers checks data frames schemas equality first.
+- README's includes description of how to link the **SMaLL Plugin SDK** library to extension project
+ and how to override configuration accessed via `PluginUtils` fixture.
 
 ## [0.2.0] - 2020-10-23
 ### Added
