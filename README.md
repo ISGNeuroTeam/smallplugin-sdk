@@ -13,6 +13,18 @@ It also required the `dispatcher-sdk` module published locally.
 
 To create your own extension you need implement trait method.
 
+### Configure project
+
+To start development process you only need to add **SMaLL plugin SDK** library dependency in your project like this:
+
+```
+  lazy val smallPluginSdkVersion: String = "0.2.0"
+
+  libraryDependencies += "ot.dispatcher.plugins.small" % "smallplugin-sdk_2.11" % smallPluginSdkVersion % Provided
+```
+The `smallplugin-sdk` library is a part of the **SMaLL plugin Core** and the `smallplugin-sdk` is compiled into it.
+So you can mark the `smallplugin-sdk` library as `Provided` to make you extension's size much smaller. 
+
 ### An `apply` command extension
 
 An `apply` command extension can be created by implementing the `apply` method of the `ApplyModel` trait.
@@ -98,7 +110,10 @@ object MyMultiModel extends ScoreModel with FitModel with ApplyModel {
 
 This SDK module provides testing tools for developers of the **SMaLL Plugin Core** extensions.
 The testing tools based on the `ScalaTest` framework and provides the abstract suite in `FlatSpec` style.
-It also provides the `DataFrame`'s matchers `shouldBe` and `shouldNotBe`.
+The `ModelSpec` class provides the `PluginUtils` as the _fixture_ to each test case as argument.
+
+It also provides the `DataFrame`'s matchers `shouldBe` and `shouldNotBe`. 
+The base `ModelSpec` testing suite class is not includes [ScalaTest's Matchers](https://www.scalatest.org/user_guide/using_matchers) you need manually extend your test suite with it to use `SmcalaTest`'s matchers. 
 
 ### Example
 ```scala
@@ -122,7 +137,22 @@ class DummyApplySpec extends ModelSpec {
 }
 ```
 
-The full code example can be found in the `src/test` directory of this module. 
+_The full code example can be found in the `src/test` directory of this module._
+
+### Access the SMaLL Plugin Core and the Dispatcher configuration
+
+The **SMaLL Plugin Core**'s and the **Dispatcher** configuration defined as protected properties of the `ModelSpec`.
+It can be overwritten in you test suite and access them via `PluginUtils` variable.
+```scala
+
+class MyModelSpec extends ModelSpec {
+  
+  override val smallCoreConfig: Config = ...
+
+  override val dispatcherConfig: Config = ...
+}
+```
+
 
 ## Deployment
 

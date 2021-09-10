@@ -72,8 +72,13 @@ abstract class ModelSpec extends fixture.FlatSpec with BeforeAndAfterAll {
     withFixture(test.toNoArgTest(utils))
   }
 
-  implicit class CompareDataFrames(left: DataFrame) {
+  implicit class DataFramesMatcher(left: DataFrame) {
     def shouldBe(right: DataFrame): Assertion = {
+      assert(
+        left.schema == right.schema,
+        "DataFrames schemas should be equal"
+      )
+
       assert(
         right.count() == left.count(),
         "DataFrames sizes should be equal"
