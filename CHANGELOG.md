@@ -4,11 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.3.0]
 ### Changed
 - The testing tool's DataFrame matchers checks data frames schemas equality first.
 - README's includes description of how to link the **SMaLL Plugin SDK** library to extension project
  and how to override configuration accessed via `PluginUtils` fixture.
+- Dispatcher_sdk dependency updated to 1.2.0.
 
 ## [0.2.0] - 2020-10-23
 ### Added
