@@ -4,10 +4,11 @@ import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.scalatest.exceptions.TestFailedException
-import org.scalatest.{Assertion, BeforeAndAfterAll, Outcome, fixture}
+import org.scalatest.flatspec.FixtureAnyFlatSpec
+import org.scalatest.{Assertion, BeforeAndAfterAll, Outcome}
 import ot.dispatcher.sdk.PluginUtils
 
-abstract class ModelSpec extends fixture.FlatSpec with BeforeAndAfterAll {
+abstract class ModelSpec extends FixtureAnyFlatSpec with BeforeAndAfterAll {
 
   override type FixtureParam = PluginUtils
 

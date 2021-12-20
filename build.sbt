@@ -4,16 +4,16 @@ description := "SMaLL plugin SDK"
 
 organization := "ot.dispatcher.plugins.small"
 
-version := "0.3.0"
+version := "1.0.0"
 
-scalaVersion := "2.11.12"
+scalaVersion := "2.12.10"
 
 lazy val dependencies = new {
 
-  private val dispatcherSdkVersion = "1.2.0"
-  private val sparkVersion = "2.4.3"
+  private val dispatcherSdkVersion = "2.0.0"
+  private val sparkVersion = "3.1.2"
 
-  val dispatcherSdk = "ot.dispatcher" % "dispatcher-sdk_2.11" % dispatcherSdkVersion % Compile
+  val dispatcherSdk = "ot.dispatcher" % "dispatcher-sdk_2.12" % dispatcherSdkVersion % Compile
   val sparkMlLib = "org.apache.spark" %% "spark-mllib" % sparkVersion % Provided
 }
 
