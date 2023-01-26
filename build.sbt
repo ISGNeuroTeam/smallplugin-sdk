@@ -4,9 +4,12 @@ description := "SMaLL plugin SDK"
 
 organization := "ot.dispatcher.plugins.small"
 
-version := "0.3.1"
+version := "0.3.2"
 
 scalaVersion := "2.11.12"
+
+resolvers += ("Sonatype OSS Snapshots" at (sys.env.getOrElse("NEXUS_OTP_URL_HTTPS","http://storage.dev.isgneuro.com")
+  + "/repository/ot.platform-sbt-releases/")).withAllowInsecureProtocol(true)
 
 lazy val dependencies = new {
 
